@@ -8,14 +8,14 @@
 }
 
 body {
-  background-color: #e9e5e5;
+  background-color: #fff;
 }
 
 h1,
 h4,
 p,
 a {
-  color: rgb(14, 13, 13);
+  color: #555454;
   text-decoration: none;
 }
 

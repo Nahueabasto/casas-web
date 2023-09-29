@@ -18,7 +18,7 @@ export default function ContactoInfo(){
                   <PhoneIcon
                     className="mui"
                     size={20}
-                    style={{ color: "#0e0d0d", marginRight: "0.5rem", marginBottom: "-2px" }}
+                    style={{ color: " #555454", marginRight: "0.5rem", marginBottom: "-2px" }}
                   />
                   +54 9 3434 17-5364
                 </h4>
@@ -29,7 +29,7 @@ export default function ContactoInfo(){
                 <EmailIcon
                 className="mui"
                   size={20}
-                  style={{ color: "#0e0d0d", marginRight: "0.5rem", marginBottom: "-5px" }}
+                  style={{ color: " #555454", marginRight: "0.5rem", marginBottom: "-5px" }}
                 />
                 n@gmail.com
               </h4>
@@ -41,7 +41,7 @@ export default function ContactoInfo(){
                 <LocationOnIcon
                 className="mui"
                   size={20}
-                  style={{ color: "#0e0d0d", marginRight: "0.5rem", marginBottom: "-2px" }}
+                  style={{ color: " #555454", marginRight: "0.5rem", marginBottom: "-2px" }}
                 />
                 406 C. La Calandria | Tanti Córdoba
               </h4>

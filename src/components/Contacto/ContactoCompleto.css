@@ -1,0 +1,32 @@
+.containerr {
+    /* padding: 10rem 0 2rem 0; */
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
+    justify-content: center; /* Centrar las columnas horizontalmente */
+    align-items: center; /* Centrar las columnas verticalmente */
+    gap: 170px; /* Espacio entre las columnas */
+    margin: 0 auto; /* Centrar el contenedor horizontalmente */
+    max-width: 1000px; /* Ancho máximo del contenedor */
+    padding: 0 0px; /* Relleno del contenedor */
+    box-sizing: border-box; /* Incluye el relleno en el ancho máximo */
+    height: 110vh; /* Opcionalmente, establece una altura para centrar el contenido verticalmente en la ventana gráfica */
+}
+
+@media screen and (max-width: 800px) {
+    .containerr {
+      grid-template-columns: 1fr; /* Una sola columna */
+    }
+      .contenedor-1 {
+    grid-column: 1;
+    padding: 10rem 0 2rem 0;
+    margin-left: 20px;
+
+}  
+  .contenedor-2 {
+    grid-column: 1;
+    margin-top: -180px;
+    max-width: 500px;
+}  
+
+
+  }

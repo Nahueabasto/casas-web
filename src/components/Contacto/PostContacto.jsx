@@ -28,28 +28,31 @@ export default function PostContacto() {
   return (
     <div className="formulario">
       <form ref={form} action="" onSubmit={handleSubmit}>
-        <div className="header-contact">
-          <h1>Contacto</h1>
-          <fieldset className="field-name">
+        <div class="header-contact">
+         
+          <div class="field">
             <label className="symbol-requiered name" htmlFor="">
-              Name
+              Nombre
             </label>
-            <input name="user_name" type="text" placeholder="Ej: Raul" required />
-          </fieldset>
-          <fieldset className="field-email">
+            <input name="user_name" type="text" placeholder="Nombre" required />
+          </div>
+
+          <div class="field">
             <label className="symbol-requiered" htmlFor="">
               Email
             </label>
-            <input name="user_email" type="email" placeholder="Ej: nahuel@gmail.com" id="email" required />
-          </fieldset>
-          <fieldset className="field-message">
+            <input name="user_email" type="email" placeholder="email@correo.com" id="email" required />
+          </div>
+
+          <div class="field">
             <label className="symbol-requiered" htmlFor="">
-              Message
+              Mensaje
             </label>
-            <textarea maxLength="500" type="email" placeholder="type your message" name="message" id="" cols="30" rows required />
-          </fieldset>
+            <textarea maxLength="500" placeholder="Dejanos tu consulta" name="message" id="message" rows="5" required></textarea>
+          </div>
+
+        <button className="btn-send">Enviar</button>
         </div>
-        <button className="btn-send">Send</button>
       </form>
     </div>
   );

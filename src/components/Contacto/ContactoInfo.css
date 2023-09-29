@@ -1,27 +1,20 @@
-.contenedor-postcontacto{
-    text-align: center;
-    padding: 7rem 0 2rem 0;
+.contenedor-postcontacto {
+  text-align: center;
+  padding: 7rem 0 2rem 0;
+  
 }
+
 
 .contacto{
-    margin-top: 10px;
+    margin-top: -210px;
     margin-bottom: 20px;
-}
-
-/* .contenedor-icopost{
-  margin: 0 auto;
-  max-width: 1000px;
-  padding: 10 20px;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-gap: 10px;
-  margin-top: 20px;
+    text-align: center;
 }
 
 .contenedor-iconos{
-    grid-column: 1; 
-    text-align: left;
-} */
+  text-align: left;
+  
+}
 
 .mui:hover {
     color: lightgreen;
@@ -31,5 +24,6 @@
   h4 {
     font-size: 1.1rem;
     padding-bottom: 0.7rem;
-    
   }
+
+  

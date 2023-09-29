@@ -1,7 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import Contactuli from "../components/Contacto/ContactoInfo";
-import PostContacto from "../components/Contacto/PostContacto";
+import ContactoCompleto from "../components/Contacto/ContactoCompleto";
 
 
 export default function Contacto(){
@@ -9,8 +8,7 @@ export default function Contacto(){
         <div>
             <div>
                 <Navbar />
-                <Contactuli />
-                <PostContacto />
+                <ContactoCompleto />
                 </div>
         </div>
     )
