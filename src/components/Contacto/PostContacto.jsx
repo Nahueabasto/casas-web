@@ -4,17 +4,13 @@ import "./PostContacto.css";
 import { useHistory } from "react-router-dom"; // Import useHistory from React Router
 
 export default function PostContacto() {
-  const refForm = useRef();
+    const form = useRef();
   const history = useHistory(); // Initialize the history object
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const serviceId = "service_549k4lj";
-    const templantId = "template_z1xl3y8";
-    const apikey = "RvQUzDzL-207noaP1";
 
-    emailjs
-      .sendForm(serviceId, templantId, refForm.current, apikey)
+    emailjs.sendForm('service_549k4lj', 'template_z1xl3y8', form.current, 'RvQUzDzL-207noaP1')
       .then((result) => {
         console.log(result.text);
 
@@ -31,20 +27,20 @@ export default function PostContacto() {
 
   return (
     <div className="formulario">
-      <form ref={refForm} action="" onSubmit={handleSubmit}>
+      <form ref={form} action="" onSubmit={handleSubmit}>
         <div className="header-contact">
           <h1>Contacto</h1>
           <fieldset className="field-name">
             <label className="symbol-requiered name" htmlFor="">
               Name
             </label>
-            <input name="username" type="text" placeholder="Ej: Raul" required />
+            <input name="user_name" type="text" placeholder="Ej: Raul" required />
           </fieldset>
           <fieldset className="field-email">
             <label className="symbol-requiered" htmlFor="">
               Email
             </label>
-            <input name="email" type="email" placeholder="Ej: nahuel@gmail.com" id="email" required />
+            <input name="user_email" type="email" placeholder="Ej: nahuel@gmail.com" id="email" required />
           </fieldset>
           <fieldset className="field-message">
             <label className="symbol-requiered" htmlFor="">
