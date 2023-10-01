@@ -40,7 +40,7 @@ export default function Navbar() {
           <Link to="/">Inicio</Link>
         </li>
         <li>
-          <Link to="/actividades">Casas en alquiler</Link>
+          <Link to="/casasenalquiler">Casas en alquiler</Link>
         </li>
         <li>
           <Link to="/campo">Servicios</Link>

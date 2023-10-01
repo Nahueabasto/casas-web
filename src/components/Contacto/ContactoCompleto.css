@@ -14,19 +14,30 @@
 
 @media screen and (max-width: 800px) {
     .containerr {
+      padding: 18rem 0 2rem 0;
+      width: 80%;
+      margin: 0 auto;
       grid-template-columns: 1fr; /* Una sola columna */
+      grid-template-rows: 10px 5px;
+      /* gap: 0px; */
     }
-      .contenedor-1 {
-    grid-column: 1;
-    padding: 10rem 0 2rem 0;
-    margin-left: 20px;
 
+    
+       .contenedor-2 {
+    padding: 2rem 0 2rem 10;
+    margin-top: 10px;
 }  
-  .contenedor-2 {
+ /* .contenedor-2 {
     grid-column: 1;
     margin-top: -180px;
     max-width: 500px;
-}  
-
+}   */
+.footer{
+  padding: 10rem 0 2rem 0;
+  width: 100%;
+  /* padding: 1rem 0; */
+  background-color: rgb(52, 52, 56);
+  margin-top: 70px;
+}
 
   }

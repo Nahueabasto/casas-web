@@ -61,5 +61,45 @@
     font-size: 19px;
     margin-top: 12px;
   }
+
+  @media screen and (max-width: 600px) {
+    .header-contact {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border-radius: 8px;
+      border: 1px solid #ccc; /* Add a border for the card effect */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a box shadow for depth */
+      background-color: #fff; /* Set the background color */
+    }
+
+  .field input[type="text"],
+  .field input[type="email"],
+  .field textarea {
+    min-width: 350px;
+    display: block;
+    width: 100%;
+    padding: 10px; /* Adjust padding for input and textarea as needed */
+    font-size: 14px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc; /* Add border for input and textarea */
+    border-radius: 5px;
+  }
+
+  .btn-send {
+    min-width: 360px;
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #f07807;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 19px;
+    margin-top: 12px;
+  }
+
+  }
   
 

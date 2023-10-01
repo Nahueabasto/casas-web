@@ -13,7 +13,7 @@ export default function ContactoInfo(){
 
             <div className="contenedor-iconos">
 
-            <div className="phone">
+            <div className="">
                 <h4 className="h4">
                   <PhoneIcon
                     className="mui"
