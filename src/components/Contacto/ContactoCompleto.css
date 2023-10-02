@@ -1,5 +1,5 @@
 .containerr {
-    /* padding: 10rem 0 2rem 0; */
+    padding: 100rem 100 22rem 100;
     display: grid;
     grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
     justify-content: center; /* Centrar las columnas horizontalmente */
@@ -9,7 +9,9 @@
     max-width: 1000px; /* Ancho máximo del contenedor */
     padding: 0 0px; /* Relleno del contenedor */
     box-sizing: border-box; /* Incluye el relleno en el ancho máximo */
-    height: 110vh; /* Opcionalmente, establece una altura para centrar el contenido verticalmente en la ventana gráfica */
+     /* Opcionalmente, establece una altura para centrar el contenido verticalmente en la ventana gráfica */
+    height: 100vh;
+    position: relative;
 }
 
 @media screen and (max-width: 800px) {
@@ -48,12 +50,12 @@
     margin-top: -180px;
     max-width: 500px;
 }   */
-.footer{
+/* .footer{
   padding: 10rem 0 2rem 0;
   width: 100%;
-  /* padding: 1rem 0; */
+ 
   background-color: rgb(52, 52, 56);
   margin-top: 60px;
-}
+} */
 
   }

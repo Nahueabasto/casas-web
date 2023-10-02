@@ -3,7 +3,7 @@
     width: 100%;
     /* padding: 1rem 0; */
     background-color: rgb(52, 52, 56);
-    
+    margin-top: -50px;
 }
 
 .left{
@@ -15,8 +15,21 @@
     
 }
 
-.location {
+/* .location {
     grid-column: 1/5;
-  }
+  } */
+
+
+  @media screen and (max-width: 800px) {
+    .footer {
+        grid-template-columns: 1fr;
+        margin-top: 150px;
+    }
+
+    /* Agrega un margen interno para los elementos dentro de las columnas */
+    .left > * {
+        margin-top: 0px; /* Ajusta este valor según tu preferencia */
+    }
+}
 
  
