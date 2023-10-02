@@ -19,7 +19,7 @@
   @media screen and (max-width: 800px) {
     .footer {
         grid-template-columns: 1fr;
-        margin-top: 150px;
+        /* margin-top: 150px; */
     }
 
     /* Agrega un margen interno para los elementos dentro de las columnas */
