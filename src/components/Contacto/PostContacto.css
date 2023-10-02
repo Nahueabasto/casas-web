@@ -76,7 +76,7 @@
   .field input[type="text"],
   .field input[type="email"],
   .field textarea {
-    min-width: 350px;
+    min-width: 300px;
     display: block;
     width: 100%;
     padding: 10px; /* Adjust padding for input and textarea as needed */
@@ -87,7 +87,7 @@
   }
 
   .btn-send {
-    min-width: 360px;
+    min-width: 310px;
     display: block;
     margin: 0 auto;
     padding: 10px 20px;
