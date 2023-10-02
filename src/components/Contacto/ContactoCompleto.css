@@ -18,7 +18,7 @@
     .containerr {
     
       padding: 18rem 0 2rem 0;
-      width: 80%;
+      width: 100%;
       margin: 0 auto;
       grid-template-columns: 1fr; /* Una sola columna */
       /* grid-template-rows: 0px 5px 10px; */
