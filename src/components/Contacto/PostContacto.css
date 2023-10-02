@@ -64,7 +64,7 @@
 
   @media screen and (max-width: 600px) {
     .header-contact {
-      max-width: 400px;
+      max-width: 350px;
       margin: 0 auto;
       padding: 20px;
       border-radius: 8px;
@@ -87,7 +87,7 @@
   }
 
   .btn-send {
-    min-width: 350px;
+    min-width: 300px;
     display: block;
     margin: 0 auto;
     padding: 10px 20px;
