@@ -22,6 +22,7 @@
         grid-template-columns: 1fr;
         /* margin-top: 150px; */
         position: absolute;
+        width: 80%;
     }
 
     /* Agrega un margen interno para los elementos dentro de las columnas */

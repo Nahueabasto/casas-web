@@ -16,19 +16,16 @@
 
 @media screen and (max-width: 800px) {
     .containerr {
-    justify-content: center;
+      justify-content: center;
       padding: 18rem 0 2rem 0;
-       width: 70%; 
+      width: 80%;  
       margin: 0 auto;
       grid-template-columns: 1fr; /* Una sola columna */
-      /* grid-template-rows: 0px 5px 10px; */
-      /* gap: 0px; */
-      /* margin-top: 100px; */
+    
     }
 
     
     .contenedor-1 {
-      
       padding: 2rem 0 2rem 10;
       margin-top: 10px;
       justify-content: center;
