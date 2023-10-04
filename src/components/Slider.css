@@ -1,6 +1,6 @@
 .mask {
     width: 100%;
-    height: 200vh; /* altura de la imagen espandida */
+    height: 100vh; /* altura de la imagen espandida */
     position: relative;
   }
   
