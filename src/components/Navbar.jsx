@@ -43,7 +43,7 @@ export default function Navbar() {
           <Link to="/casasenalquiler">Casas en alquiler</Link>
         </li>
         <li>
-          <Link to="/campo">Servicios</Link>
+          <Link to="/Servicios">Servicios</Link>
         </li>
         <li>
           <Link to="/contacto">Contacto</Link>

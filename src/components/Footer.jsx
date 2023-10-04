@@ -8,7 +8,7 @@ export default function Footer(){
     return(
         <div className="footer">
 <div className="left">
-            <a href="https://www.instagram.com/polleria_olivia/">
+            <a href="">
               <div className="location">
                 <InstagramIcon
                   className="mui"
@@ -21,7 +21,7 @@ export default function Footer(){
               </div>
             </a>
 
-            <a href="https://www.instagram.com/polleria_olivia/">
+            <a href="">
             <div className="phone">
                 <h4 className="h4">
                   <FacebookIcon
