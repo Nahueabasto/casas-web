@@ -1,4 +1,5 @@
 import React from "react";
+import "./Slider.css";
 import img from "../img/ruben.jpg";
 
 export default function Slider(){
