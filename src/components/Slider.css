@@ -49,7 +49,7 @@
   
   .content .btn {
     margin: 1rem 0.2rem;
-  }
+  } 
   
   @media screen and (max-width: 800px) {
     .hero .content h1 {

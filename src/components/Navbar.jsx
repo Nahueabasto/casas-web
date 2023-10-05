@@ -36,7 +36,7 @@ export default function Navbar() {
           {/* <h1 className="text-nav">Polleria Olivia</h1> */}
           </div>  
         <ul className={click ? "nav-menu active" : "nav-menu"}>
-        <li>
+        <li class="active">
           <Link to="/">Inicio</Link>
         </li>
         <li>
@@ -51,9 +51,9 @@ export default function Navbar() {
         </ul>
         <div className="hamburguer" onClick={handleClick}>
         {click ? (
-          <FaTimes size={30} style={{ color: "#0c0c0c" }} />
+          <FaTimes size={30} style={{ color: "#d6d2d2" }} />
         ) : (
-          <FaBars size={30} style={{ color: "#0c0c0c" }} />
+          <FaBars size={30} style={{ color: "#d6d2d2" }} />
         )}
       </div>
       </div>
