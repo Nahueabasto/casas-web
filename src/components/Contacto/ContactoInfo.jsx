@@ -44,7 +44,7 @@ export default function ContactoInfo(){
                   size={20}
                   style={{ color: " #555454", marginRight: "0.5rem", marginBottom: "-2px" }}
                 />
-                406 C. La Calandria | Tanti Córdoba
+                 | 
               </h4>
               </a>
             </div>
