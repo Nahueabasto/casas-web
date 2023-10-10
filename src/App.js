@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-//import './App.css';
+import './App.css';
 import Inicio from './pages/Inicio';
 import Contacto from './pages/Contacto';
 import Gracias from './pages/Gracias';
@@ -11,6 +11,7 @@ function App() {
   
   return (
     <BrowserRouter>
+    {/* <div className="App">  */}
     <Switch>
       <Route exact path="/" component={Inicio} /> 
       <Route exact path="/contacto" component={Contacto} />
@@ -18,6 +19,7 @@ function App() {
       <Route exact path="/casasenalquiler" component={CasasEnAlquiler} />
       <Route exact path="/servicios" component={Servicios} />
     </Switch>
+    {/* </div> */}
     </BrowserRouter>
   );
 }

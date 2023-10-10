@@ -1,8 +1,4 @@
-.contenedor-postcontacto {
-  text-align: center;
-  /* padding: 7rem 0 2rem 0; */
-  
-}
+
 
 
 .contacto{
@@ -16,10 +12,10 @@
   
 }
 
-.mui:hover {
+/* .mui:hover {
     color: lightgreen;
     transition: all 0.2s ease;
-  }
+  } */
 
   h4 {
     font-size: 1.1rem;

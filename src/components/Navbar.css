@@ -7,8 +7,8 @@
     width: 100%;
     height: 80px;
     z-index: 10;
-    background-color: rgb(46, 45, 45); 
-    opacity: 0.8;
+    background-color: rgba(46, 45, 45, 0.8); 
+    /* opacity: 0.9; */
     /* background-color: #d6d2d2;
     position: absolute; */
 }
@@ -24,18 +24,28 @@
   .logo-h1 {
     display: flex;
     align-items: center; /* Centrar verticalmente los elementos */
-    gap: 10px; /* Espacio entre los elementos */
+    gap: 5px; /* Espacio entre los elementos */
+    /* left: 80% */
+    margin-left: 10%;
+  }
+
+  .text-nav:hover {
+    color:#f07807; /* Cambia el color del texto a naranja en el estado de hover */
   }
 
 .logoeco{
-    padding: 5px;
+    padding: 10px;
     flex: 1;
     border-radius: 50%;
-    max-width: 100%
+    max-width: 100%;
+    
 }
 
 .text-nav{
+  text-decoration: none; /* Elimina la subrayado de los enlaces */
     align-items: center;
+    font-size: 30px;
+    color: #FFFFFF;
     
 }
 
@@ -64,7 +74,7 @@
     display: none;
   }
 
-  @media screen and (max-width: 800px) { /* 800px para cuando empieza a activarse el nav manu */
+  @media screen and (max-width: 950px) { /* 800px para cuando empieza a activarse el nav manu */
     .nav-menu {
       flex-direction: column;
       justify-content: center;

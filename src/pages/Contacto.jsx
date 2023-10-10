@@ -18,8 +18,10 @@ export default function Contacto(){
                 <PostContacto />
             </div>
             </div>
+            </div>
+            <div className="fo">
                 <Footer />
-                </div>
+            </div>
         </div>
     )
 } 

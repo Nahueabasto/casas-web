@@ -20,12 +20,12 @@
 
 @media screen and (max-width: 800px) {
     .containerr {
+      
       display: flex;
   flex-direction: column;
   align-items: center; /* Esto centrará horizontalmente */
   justify-content: center; /* Esto centrará verticalmente */
-  padding: 2rem; /* Ajusta el valor de relleno según tus necesidades */
-  /* width: 80%; */
+  margin-bottom: 200px;
   margin: 0 auto;
   grid-template-columns: 1fr;
     
@@ -53,13 +53,9 @@
     position: absolute;
 }  
 
+.fo{
+  margin-top: 140px;
+}
 
-.footer{
-  padding: 10rem 0 2rem 0;
-  width: 100%;
-  margin-top: 130px;
-  position: absolute;
-  /* margin-top: 15px; */
-  }
 
   }

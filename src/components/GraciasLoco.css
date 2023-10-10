@@ -1,0 +1,27 @@
+
+ .sediceque {
+   padding: 180px;
+    text-align: center;
+    height: 70vh;
+    /* margin-top: 10px; */
+    margin: 0 auto;
+  } 
+
+
+.gracias + p {
+    margin-top: 10px; /* Ajusta la cantidad de espacio según tus necesidades */
+}
+
+p {
+  font-weight: bold;
+}
+
+
+@media screen and (max-width: 800px) {
+  .sediceque {
+    padding: 150px;
+    text-align: center;
+    padding-left: 20px; /* Margen a la izquierda */
+    padding-right: 20px; /* Margen a la derecha */
+}
+}

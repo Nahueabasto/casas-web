@@ -1,3 +1,4 @@
+
 .header-contact {
   max-width: 500px;
   margin: 0 auto;
@@ -62,7 +63,14 @@
     margin-top: 12px;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 800px) {
+    .formulario{
+      margin-top: 5px;
+    position: relative;
+    top: 50%;
+    
+    }
+
     .header-contact {
       max-width: 450px;
       margin: 0 auto;
@@ -99,6 +107,8 @@
     font-size: 19px;
     margin-top: 12px;
   }
+
+
 
   }
   
