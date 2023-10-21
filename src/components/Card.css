@@ -89,7 +89,7 @@
     background-color: #e48f0f;
   }
   
-  @media screen and (max-width: 740px) {
+  @media screen and (max-width: 945px) {
     .project-container {
       max-width: 10%;
       margin: auto;

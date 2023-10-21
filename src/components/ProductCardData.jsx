@@ -5,7 +5,7 @@ import ProDos from "../img/ruben.jpg";
 const ProductCardData = [
     {
         id: 1,
-        imgsrc: ProUno,
+        imgsrc: [ProUno, ProDos],
         title: "Casa 1",
         text: "",
         view: "Ver casa",
@@ -13,7 +13,7 @@ const ProductCardData = [
       },
       {
         id: 2,
-        imgsrc: ProDos,
+        imgsrc: [ProDos],
         title: "Casa 2",
         text: "",
         view: "Ver casa",

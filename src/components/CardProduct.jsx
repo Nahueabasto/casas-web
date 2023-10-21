@@ -13,13 +13,13 @@ const CardProduct = () => {
         {ProductCardData.map((val, ind) => {
           return (
             <Card
+              id={val.id}
               key={ind}
               imgsrc={val.imgsrc}
               title={val.title}
               text={val.text}
               view={val.view}
               source={val.source}
-              
             />
           );
         })}

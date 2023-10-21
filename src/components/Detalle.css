@@ -1,0 +1,86 @@
+.detalle-f{
+    padding: 120px;
+    max-width: 10000px;
+    margin: 0 auto; /* Esto centrará el contenedor en la página horizontalmente */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px; /* Espacio entre tarjetas */
+    justify-content: center; /* Centrar las columnas horizontalmente */
+    text-align: center;
+}
+
+.imagenes-container img{
+    width: 550px;
+    height: 400px; /* Establece la altura fija que desees para las imágenes */
+     /* El ancho se ajustará automáticamente */
+    border-radius: 2px;
+}
+
+.pepe p {
+    padding-bottom: 1rem;
+    font-size: 1.1rem;
+    text-align: justify;
+  }
+
+  .iconos-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around; /* Espacio equitativo entre elementos */
+    width: 400px;
+  }
+
+  .icon-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30px;
+    height: 40px;
+    /* margin-left: 45px; */
+  }
+
+  .mui {
+    display: flex;
+    
+    align-items: center;
+    /* white-space: nowrap; */
+    text-align: center;
+    margin: 10px;
+  }
+
+  .icon-container h4 {
+    display: inline-block;
+    margin-right: 20px;  
+    font-size: 0px;
+  }
+
+  .slider-container {
+    position: relative;
+    height: 100%
+  }
+  
+  .leftArrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 32px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+  }
+  
+  .rightArrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: 32px;
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    z-index: 1;
+    cursor: pointer;
+  }
+ 
+  
