@@ -54,14 +54,29 @@
     font-size: 0px;
   }
 
+  /* slider */
   .slider-container {
     position: relative;
     height: 100%
   }
-  
+
+  /* dots carrusel */
+  .dot-container {
+    display: flex;
+    justify-content: center;
+    
+  }
+
+  .dot-container-item {
+    margin: 8px 3px;
+    cursor: pointer;
+    font-size: 10px;
+    text-align: center;
+  }
+
   .leftArrow {
     position: absolute;
-    top: 50%;
+    top: 45%;
     transform: translate(0, -50%);
     left: 32px;
     font-size: 50px;
@@ -69,11 +84,12 @@
     color: #fff;
     z-index: 1;
     cursor: pointer;
+    user-select: none; /* para que no quede seleccionada la flecha */
   }
   
   .rightArrow {
     position: absolute;
-    top: 50%;
+    top: 45%;
     transform: translate(0, -50%);
     right: 32px;
     font-size: 50px;
@@ -81,6 +97,13 @@
     color: #fff;
     z-index: 1;
     cursor: pointer;
+    user-select: none;
   }
- 
+
+  div.active {
+    background: #726b6b;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+  }
   

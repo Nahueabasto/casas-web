@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from "react-router-dom";
 import ProductCardData from "./ProductCardData";
 import WifiIcon from '@mui/icons-material/Wifi';
@@ -11,15 +11,11 @@ import "./Detalle.css";
 
 const Detalle = () => {
   const { id } = useParams(); // Obtén el ID de la URL
+  const listRef = useRef();
   const [imagenActual, setImagenActual] = useState(0);
-  const [modalIsOpen, setModalIsOpen] = useState(false); 
-  // Busca los datos de la casa correspondiente por ID
+  
   const casa = ProductCardData.find((casa) => casa.id === Number(id));
-  console.log(casa);
 
-  if (!casa) {
-    return <div>Casa no encontrada</div>;
-  }
 
   const cambiarImagen = (direccion) => {
     if (direccion === "prev") {
@@ -39,7 +35,14 @@ const Detalle = () => {
     }
   };
 
-  const primeraImagen = casa.imgsrc[imagenActual]; // Imagen actual
+  //const primeraImagen = casa.imgsrc[imagenActual]; // Imagen actual
+
+  const goToSlide = (slideIndex) => {
+    console.log(slideIndex);
+    setImagenActual(slideIndex);
+  }
+
+  //console.log(primeraImagen)
 
   return (
     <div className="detalle-f">
@@ -50,12 +53,33 @@ const Detalle = () => {
     <div className='leftArrow' onClick={() => cambiarImagen('prev')}>&#10092;</div>
         <div className='rightArrow' onClick={() => cambiarImagen('next')}>&#10093;</div>
 
-      <img src={primeraImagen} alt={`Imagen ${imagenActual + 1}`} />
+      {/* <img src={primeraImagen} alt={`Imagen ${imagenActual + 1}`} /> */}
+      
+   
+            {casa.imgsrc.map((item, idx) => (
+              <li
+                key={item.id}
+                style={{ display: idx === imagenActual ? "block" : "none" }}
+              >
+                <img
+                  src={item}
+                  alt={`Imagen ${idx + 1}`}
+                />
+              </li>
+            ))}
+          
+      <div className="dot-container">
+  {casa.imgsrc.map((_, idx) => (
+    <div
+      key={idx}
+      className={`dot-container-item ${idx === imagenActual ? "active" : ""}`}
+      onClick={() => goToSlide(idx)}
+    >
+      &#9865;
+    </div>
+  ))}
+</div>
 
-      {/* <div className="slide-controls">
-        <button className="slide-control prev" onClick={() => cambiarImagen("anterior")}></button>
-        <button className="slide-control next" onClick={() => cambiarImagen("siguiente")}></button>
-      </div> */}
     </div>
   </div>
 
