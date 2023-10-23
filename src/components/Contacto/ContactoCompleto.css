@@ -1,5 +1,6 @@
 .containerr {
-    padding: 100rem 100 22rem 100;
+    /* padding: 100rem 100 22rem 100; */
+    padding: 0 200px;
     display: grid;
     grid-template-columns: 1fr 1fr; /* Dos columnas de igual ancho */
     justify-content: center; /* Centrar las columnas horizontalmente */
@@ -7,7 +8,7 @@
     gap: 170px; /* Espacio entre las columnas */
     margin: 0 auto; /* Centrar el contenedor horizontalmente */
     max-width: 1000px; /* Ancho máximo del contenedor */
-    padding: 0 0px; /* Relleno del contenedor */
+    padding: 0 0px; /* Agrega 20 píxeles de espacio a la izquierda y derecha */
     box-sizing: border-box; /* Incluye el relleno en el ancho máximo */
      /* Opcionalmente, establece una altura para centrar el contenido verticalmente en la ventana gráfica */
     height: 100vh;
@@ -18,20 +19,17 @@
   margin-top: -220px;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1100px) {
     .containerr {
-      
-      display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center; /* Esto centrará horizontalmente */
   justify-content: center; /* Esto centrará verticalmente */
   margin-bottom: 200px;
   margin: 0 auto;
   grid-template-columns: 1fr;
-    
-    }
+  }
 
-    
     .contenedor-1 {
       padding: 2rem 0 2rem 10;
       margin-top: -200px;

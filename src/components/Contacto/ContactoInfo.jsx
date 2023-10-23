@@ -17,7 +17,7 @@ export default function ContactoInfo(){
             <div className="">
                 <h4 className="h4">
                   <PhoneIcon
-                    className="mui"
+                    className=""
                     size={20}
                     style={{ color: " #555454", marginRight: "0.5rem", marginBottom: "-2px" }}
                   />
@@ -28,7 +28,7 @@ export default function ContactoInfo(){
                 <div className="email">
               <h4 className="h4">
                 <EmailIcon
-                className="mui"
+                className=""
                   size={20}
                   style={{ color: " #555454", marginRight: "0.5rem", marginBottom: "-5px" }}
                 />
@@ -40,7 +40,7 @@ export default function ContactoInfo(){
             <a href="https://maps.app.goo.gl/ZyRZWquPM61naZhj9" target="_blank" rel="noopener noreferrer">
               <h4 className="h4">
                 <LocationOnIcon
-                className="mui"
+                className=""
                   size={20}
                   style={{ color: " #555454", marginRight: "0.5rem", marginBottom: "-2px" }}
                 />

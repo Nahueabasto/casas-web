@@ -7,7 +7,7 @@ const ProductCardData = [
         id: 1,
         imgsrc: [ProUno, ProDos],
         title: "Casa 1",
-        text: "",
+        text: "Funcionales y cómodas unidades equipadas para 3 personas. Living comedor, cocina, baño, dormitorio cama matrimonial y sofá cama o marinera para adolescente.- Excelente Opción",
         view: "Ver casa",
         source: "",
       },
