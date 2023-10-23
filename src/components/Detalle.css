@@ -182,5 +182,11 @@
     
     }
 
+  }
 
+  @media screen and (max-width: 600px) {
+    .imagenes-container img{
+      width: 350px;
+      height: 250px; 
+  }
   }
