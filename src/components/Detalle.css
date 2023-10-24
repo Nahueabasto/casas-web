@@ -216,4 +216,8 @@
     /* overflow-y: auto; */
   }
 
+  .pepe p {
+    padding: 0 5px;
+  }
+
   }
