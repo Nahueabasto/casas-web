@@ -17,39 +17,7 @@ const Detalle = () => {
   const [imagenActual, setImagenActual] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
   const casa = ProductCardData.find((casa) => casa.id === Number(id));
-  console.log(casa.text);
-
-  const touchStartX = useRef(null);
-
-  const handleTouchStart = (e) => {
-    touchStartX.current = e.touches[0].clientX;
-  };
-
-  const handleTouchEnd = (e) => {
-    if (touchStartX.current !== null) {
-      const touchEndX = e.changedTouches[0].clientX;
-      const deltaX = touchEndX - touchStartX.current;
-
-      if (deltaX > 50) {
-        cambiarImagen('prev'); // Deslizar hacia la izquierda
-      } else if (deltaX < -50) {
-        cambiarImagen('next'); // Deslizar hacia la derecha
-      }
-
-      touchStartX.current = null;
-    }
-  };
-
-  useEffect(() => {
-    const slider = document.querySelector('.slider-container');
-    slider.addEventListener('touchstart', handleTouchStart);
-    slider.addEventListener('touchend', handleTouchEnd);
-
-    return () => {
-      slider.removeEventListener('touchstart', handleTouchStart);
-      slider.removeEventListener('touchend', handleTouchEnd);
-    };
-  }, []);
+  const [touchStartX, setTouchStartX] = useState(null);
 
   const cambiarImagen = (direccion) => {
     if (direccion === "prev") {
@@ -107,10 +75,40 @@ const Detalle = () => {
     };
   }, [modalVisible, imagenActual]);
 
+  /////////////////////////////////////////////
+
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    if (touchStartX === null) {
+      return;
+    }
+    const touchEndX = e.touches[0].clientX;
+    const deltaX = touchEndX - touchStartX;
+
+    if (deltaX > 50) {
+      // Swipe right, go to the previous image
+      irImagenAnterior();
+    } else if (deltaX < -50) {
+      // Swipe left, go to the next image
+      irImagenSiguiente();
+    }
+
+    // Reset the touch start position
+    setTouchStartX(null);
+  };
+
+
   return (
     <div className="detalle-f">
       <div className="imagenes-container">
-        <div className="slider-container">
+      <div
+          className="slider-container"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+        >
           <div className="leftArrow" onClick={() => cambiarImagen('prev')}>
             &#10092;
           </div>
@@ -147,7 +145,6 @@ const Detalle = () => {
 
       {modalVisible && (
         <div className="modal-background" onClick={handleClickModal}>
-        <div className="modal-background">
           <div className="modal-arrow modal-arrow-left" onClick={irImagenAnterior}>
             <ArrowBackIosNewIcon size={50} style={{ color: "#d6d2d2", fontSize: "large" }} />
           </div>
@@ -162,9 +159,9 @@ const Detalle = () => {
             alt={`Imagen ${imagenActual + 1}`}
           />
         </div>
-        </div>
+       
       )}
-    
+
     <div className="pepe">
       <p>{casa.text}</p>
       <div className="iconos-container">
