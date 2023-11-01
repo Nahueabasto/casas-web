@@ -18,10 +18,15 @@
 }
 
 .pepe p {
-    padding-bottom: 1rem;
-    font-size: 1.1rem;
-    text-align: justify;
-  }
+  padding-bottom: 1rem;
+  font-size: 1.1rem;
+  text-align: left; /* Alinea el texto a la izquierda */
+  overflow-wrap: break-word; /* Permite el salto de palabras si no caben en el ancho */
+  word-wrap: break-word; /* Otra propiedad relacionada con el salto de palabras */
+  max-width: 100%; /* Limita el ancho máximo para evitar que las palabras se salgan de los márgenes */
+}
+
+
 
   .iconos-container{
     display: flex;
@@ -219,14 +224,17 @@
   }
 
   .pepe p {
-    padding: 0 15px;
+    padding: 5px; /* Ajusta el relleno vertical y horizontal según tus necesidades */
+    margin: 0; /* Elimina el margen si no es necesario */
     width: 95%;
-    margin: 0 auto;
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
-  
+    letter-spacing: normal; /* O ajusta el valor según tus necesidades, por ejemplo, "1px" o "0.5em" */
+    overflow-wrap: break-word; /* Permite el salto de palabras si no caben en el ancho */
+    
   }
+  
 
   .iconos-container{
     width: 350px;
