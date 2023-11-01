@@ -15,6 +15,19 @@
      /* El ancho se ajustará automáticamente */
     border-radius: 2px;
     cursor: pointer;
+    
+}
+
+.imagenes-container ul {
+  display: flex; /* Mostrar las imágenes en una fila */
+   /* Ancho extremadamente grande para acomodar todas las imágenes */
+  transition: transform 8s ease; /* Agregar una transición suave para el desplazamiento */
+}
+
+.imagenes-container li {
+  width: 100%; /* Cada imagen ocupa el 100% del ancho del contenedor */
+ /* Evitar que las imágenes se redimensionen */
+ transition: transform 8s ease;  
 }
 
 .pepe p {
@@ -29,6 +42,7 @@
     align-items: center;
     justify-content: space-around; /* Espacio equitativo entre elementos */
     width: 400px;
+    overflow: hidden;
   }
 
   .icon-container{

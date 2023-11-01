@@ -59,6 +59,59 @@ console.log(casa.text)
     }
   };
 
+  useEffect(() => {
+    const handleKeyboardNavigation = (event) => {
+      if (modalVisible) {
+        if (event.key === 'ArrowLeft') {
+          irImagenAnterior();
+        } else if (event.key === 'ArrowRight') {
+          irImagenSiguiente();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyboardNavigation);
+
+    // Limpia el evento anterior antes de agregar uno nuevo
+    return () => {
+      window.removeEventListener('keydown', handleKeyboardNavigation);
+    };
+  }, [modalVisible, imagenActual]);
+
+///////////////////////////////////////////////
+// npm install react-swipeable // para hacer deslizable con el celu los
+const touchStartX = useRef(null);
+
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    if (touchStartX.current !== null) {
+      const touchEndX = e.changedTouches[0].clientX;
+      const deltaX = touchEndX - touchStartX.current;
+
+      if (deltaX > 50) {
+        cambiarImagen('prev'); // Deslizar hacia la izquierda
+      } else if (deltaX < -50) {
+        cambiarImagen('next'); // Deslizar hacia la derecha
+      }
+
+      touchStartX.current = null;
+    }
+  };
+
+  useEffect(() => {
+    const slider = document.querySelector('.slider-container');
+    slider.addEventListener('touchstart', handleTouchStart);
+    slider.addEventListener('touchend', handleTouchEnd);
+
+    return () => {
+      slider.removeEventListener('touchstart', handleTouchStart);
+      slider.removeEventListener('touchend', handleTouchEnd);
+    };
+  }, []);
+//////////////////////////
 
   return (
     <div className="detalle-f">
@@ -98,8 +151,6 @@ console.log(casa.text)
         </div>
       </div>
 
-      
-
       {modalVisible && (
         <div className="modal-background" onClick={handleClickModal}>
         <div className="modal-background">
@@ -120,9 +171,6 @@ console.log(casa.text)
         </div>
       )}
     
-    
-
-
     <div className="pepe">
       <p>{casa.text}</p>
       <div className="iconos-container">
@@ -168,8 +216,6 @@ console.log(casa.text)
                 </h4>
       </div>
     </div>
-   
-    
   </div>
   );
 };
