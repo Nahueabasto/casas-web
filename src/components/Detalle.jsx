@@ -77,6 +77,10 @@ const Detalle = () => {
 
   /////////////////////////////////////////////
 
+  const handleTouchStart = (e) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
   const handleTouchMove = (e) => {
     if (touchStartX === null) {
       return;
@@ -96,7 +100,6 @@ const Detalle = () => {
     setTouchStartX(null);
   };
 
-  
   return (
     <div className="detalle-f">
       <div className="imagenes-container">
