@@ -124,24 +124,39 @@ const Detalle = () => {
       </div>
 
       {modalVisible && (
-        <div className="modal-background" onClick={handleClickModal}>
-          <div className="modal-arrow modal-arrow-left" onClick={irImagenAnterior}>
-            <ArrowBackIosNewIcon size={50} style={{ color: "#d6d2d2", fontSize: "large" }} />
-          </div>
-          <div className="modal-arrow modal-arrow-right" onClick={irImagenSiguiente}>
-            <ArrowForwardIosIcon size={50} style={{ color: "#d6d2d2", fontSize: "large" }} />
-          </div>
-          <div className="modal-close" onClick={cerrarModal}>
-            <CloseIcon size={50} style={{ color: "#d6d2d2" }} />
-          </div>
-          <img className='imagen-modal'
-            src={casa.imgsrc[imagenActual]}
-            alt={`Imagen ${imagenActual + 1}`}
-          />
-        </div>
-       
-      )}
-
+  <div className="modal-background" onClick={handleClickModal}>
+    <div
+      className="modal-arrow modal-arrow-left"
+      onClick={irImagenAnterior}
+      onSwipeLeft={irImagenAnterior}
+    >
+      <ArrowBackIosNewIcon
+        size={50}
+        style={{ color: "#d6d2d2", fontSize: "large" }}
+      />
+    </div>
+    <div
+      className="modal-arrow modal-arrow-right"
+      onClick={irImagenSiguiente}
+      onSwipeRight={irImagenSiguiente}
+    >
+      <ArrowForwardIosIcon
+        size={50}
+        style={{ color: "#d6d2d2", fontSize: "large" }}
+      />
+    </div>
+    <div className="modal-close" onClick={cerrarModal}>
+      <CloseIcon size={50} style={{ color: "#d6d2d2" }} />
+    </div>
+    <img
+      className='imagen-modal'
+      src={casa.imgsrc[imagenActual]}
+      alt={`Imagen ${imagenActual + 1}`}
+      onSwipeLeft={irImagenAnterior}
+      onSwipeRight={irImagenSiguiente}
+    />
+  </div>
+)}
 
       {/* {modalVisible && (
         <div className="modal-background" onClick={handleClickModal}>
