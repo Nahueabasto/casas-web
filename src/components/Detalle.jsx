@@ -77,17 +77,13 @@ const Detalle = () => {
 
   /////////////////////////////////////////////
 
-  const handleTouchStart = (e) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-
   const handleTouchMove = (e) => {
     if (touchStartX === null) {
       return;
     }
     const touchEndX = e.touches[0].clientX;
     const deltaX = touchEndX - touchStartX;
-
+  
     if (deltaX > 50) {
       // Swipe right, go to the previous image
       irImagenAnterior();
@@ -95,12 +91,12 @@ const Detalle = () => {
       // Swipe left, go to the next image
       irImagenSiguiente();
     }
-
-    // Reset the touch start position
+  
+    // Reset the touch start position after the swipe is processed
     setTouchStartX(null);
   };
 
-
+  
   return (
     <div className="detalle-f">
       <div className="imagenes-container">
