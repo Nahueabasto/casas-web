@@ -10,14 +10,15 @@ import "./Detalle.css";
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import CloseIcon from '@mui/icons-material/Close';
-
+import { useSwipeable } from 'react-swipeable';
+import Swipeable from 'react-swipeable';
 
 const Detalle = () => {
   const { id } = useParams();
   const [imagenActual, setImagenActual] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
   const casa = ProductCardData.find((casa) => casa.id === Number(id));
-  const [touchStartX, setTouchStartX] = useState(null);
+
 
   const cambiarImagen = (direccion) => {
     if (direccion === "prev") {
@@ -59,59 +60,39 @@ const Detalle = () => {
 
   useEffect(() => {
     const handleKeyboardNavigation = (event) => {
-      if (modalVisible) {
-        if (event.key === 'ArrowLeft') {
-          irImagenAnterior();
-        } else if (event.key === 'ArrowRight') {
-          irImagenSiguiente();
-        }
-      }
+       if (modalVisible) {
+         if (event.key === 'Escape') {
+           cerrarModal();
+         } else if (event.key === 'ArrowLeft') {
+           irImagenAnterior();
+         } else if (event.key === 'ArrowRight') {
+           irImagenSiguiente();
+         }
+       }
     };
-
+   
     window.addEventListener('keydown', handleKeyboardNavigation);
-
+   
     return () => {
-      window.removeEventListener('keydown', handleKeyboardNavigation);
+       window.removeEventListener('keydown', handleKeyboardNavigation);
     };
-  }, [modalVisible, imagenActual]);
+   }, [modalVisible, imagenActual]);
 
   /////////////////////////////////////////////
+  const handlers = useSwipeable({
+    onSwipedLeft: () => cambiarImagen('next'),
+    onSwipedRight: () => cambiarImagen('prev'),
+  });
 
-  const handleTouchStart = (e) => {
-    setTouchStartX(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e) => {
-    if (touchStartX === null) {
-      return;
-    }
-    const touchEndX = e.touches[0].clientX;
-    const deltaX = touchEndX - touchStartX;
-  
-    if (deltaX > 50) {
-      // Swipe right, go to the previous image
-      irImagenAnterior();
-    } else if (deltaX < -50) {
-      // Swipe left, go to the next image
-      irImagenSiguiente();
-    }
-  
-    // Reset the touch start position after the swipe is processed
-    setTouchStartX(null);
-  };
 
   return (
     <div className="detalle-f">
-      <div className="imagenes-container">
-      <div
-          className="slider-container"
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-        >
-          <div className="leftArrow" onClick={() => cambiarImagen('prev')}>
+      <div className="imagenes-container" {...handlers}>
+        <div className="slider-container">
+          <div className="leftArrow">
             &#10092;
           </div>
-          <div className="rightArrow" onClick={() => cambiarImagen('next')}>
+          <div className="rightArrow">
             &#10093;
           </div>
           <ul>
@@ -160,6 +141,28 @@ const Detalle = () => {
         </div>
        
       )}
+
+
+      {/* {modalVisible && (
+        <div className="modal-background" onClick={handleClickModal}>
+          <div className="modal-arrow modal-arrow-left" onClick={irImagenAnterior}>
+            <ArrowBackIosNewIcon size={50} style={{ color: "#d6d2d2", fontSize: "large" }} />
+          </div>
+          <div className="modal-arrow modal-arrow-right" onClick={irImagenSiguiente}>
+            <ArrowForwardIosIcon size={50} style={{ color: "#d6d2d2", fontSize: "large" }} />
+          </div>
+          <div className="modal-close" onClick={cerrarModal}>
+            <CloseIcon size={50} style={{ color: "#d6d2d2" }} />
+          </div>
+          <div {...swipeHandlers}>
+          <img className='imagen-modal'
+            src={casa.imgsrc[imagenActual]}
+            alt={`Imagen ${imagenActual + 1}`}
+          />
+        </div>
+        </div>
+       
+      )} */}
 
     <div className="pepe">
       <p>{casa.text}</p>
