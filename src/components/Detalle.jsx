@@ -93,12 +93,8 @@ const Detalle = () => {
     <div className="detalle-f">
       <div className="imagenes-container" {...handlers}>
         <div className="slider-container">
-          <div className="leftArrow">
-            &#10092;
-          </div>
-          <div className="rightArrow">
-            &#10093;
-          </div>
+        <div className='leftArrow' onClick={() => cambiarImagen('prev')}>&#10092;</div>
+        <div className='rightArrow' onClick={() => cambiarImagen('next')}>&#10093;</div>
           <ul>
             {casa.imgsrc.map((item, idx) => (
               <li
