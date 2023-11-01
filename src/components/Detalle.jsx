@@ -13,74 +13,13 @@ import CloseIcon from '@mui/icons-material/Close';
 
 
 const Detalle = () => {
-  const { id } = useParams(); // Obtén el ID de la URL
+  const { id } = useParams();
   const [imagenActual, setImagenActual] = useState(0);
   const [modalVisible, setModalVisible] = useState(false);
   const casa = ProductCardData.find((casa) => casa.id === Number(id));
+  console.log(casa.text);
 
-console.log(casa.text)
-  const cambiarImagen = (direccion) => {
-    if (direccion === "prev") {
-      if (imagenActual > 0) {
-        setImagenActual(imagenActual - 1);
-      } else {
-        // Si estás en la primera imagen y haces clic en "Anterior", avanza a la última
-        setImagenActual(casa.imgsrc.length - 1);
-      }
-    } else if (direccion === "next") {
-      if (imagenActual < casa.imgsrc.length - 1) {
-        setImagenActual(imagenActual + 1);
-      } else {
-        // Si estás en la última imagen y haces clic en "Siguiente", retrocede a la primera
-        setImagenActual(0);
-      }
-    }
-  };
-
-  const abrirModal = () => {
-    setModalVisible(true);
-  };
-
-  const cerrarModal = () => {
-    setModalVisible(false);
-  };
-
-  const irImagenAnterior = () => {
-    setImagenActual((imagenActual - 1 + casa.imgsrc.length) % casa.imgsrc.length);
-  };
-  
-  const irImagenSiguiente = () => {
-    setImagenActual((imagenActual + 1) % casa.imgsrc.length);
-  };
-
-  const handleClickModal = (e) => {
-    if (e.target.classList.contains('modal-background')) {
-      cerrarModal();
-    }
-  };
-
-  useEffect(() => {
-    const handleKeyboardNavigation = (event) => {
-      if (modalVisible) {
-        if (event.key === 'ArrowLeft') {
-          irImagenAnterior();
-        } else if (event.key === 'ArrowRight') {
-          irImagenSiguiente();
-        }
-      }
-    };
-
-    window.addEventListener('keydown', handleKeyboardNavigation);
-
-    // Limpia el evento anterior antes de agregar uno nuevo
-    return () => {
-      window.removeEventListener('keydown', handleKeyboardNavigation);
-    };
-  }, [modalVisible, imagenActual]);
-
-///////////////////////////////////////////////
-// npm install react-swipeable // para hacer deslizable con el celu los
-const touchStartX = useRef(null);
+  const touchStartX = useRef(null);
 
   const handleTouchStart = (e) => {
     touchStartX.current = e.touches[0].clientX;
@@ -111,7 +50,62 @@ const touchStartX = useRef(null);
       slider.removeEventListener('touchend', handleTouchEnd);
     };
   }, []);
-//////////////////////////
+
+  const cambiarImagen = (direccion) => {
+    if (direccion === "prev") {
+      if (imagenActual > 0) {
+        setImagenActual(imagenActual - 1);
+      } else {
+        setImagenActual(casa.imgsrc.length - 1);
+      }
+    } else if (direccion === "next") {
+      if (imagenActual < casa.imgsrc.length - 1) {
+        setImagenActual(imagenActual + 1);
+      } else {
+        setImagenActual(0);
+      }
+    }
+  };
+
+  const abrirModal = () => {
+    setModalVisible(true);
+  };
+
+  const cerrarModal = () => {
+    setModalVisible(false);
+  };
+
+  const irImagenAnterior = () => {
+    setImagenActual((imagenActual - 1 + casa.imgsrc.length) % casa.imgsrc.length);
+  };
+
+  const irImagenSiguiente = () => {
+    setImagenActual((imagenActual + 1) % casa.imgsrc.length);
+  };
+
+  const handleClickModal = (e) => {
+    if (e.target.classList.contains('modal-background')) {
+      cerrarModal();
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyboardNavigation = (event) => {
+      if (modalVisible) {
+        if (event.key === 'ArrowLeft') {
+          irImagenAnterior();
+        } else if (event.key === 'ArrowRight') {
+          irImagenSiguiente();
+        }
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyboardNavigation);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyboardNavigation);
+    };
+  }, [modalVisible, imagenActual]);
 
   return (
     <div className="detalle-f">
@@ -156,17 +150,17 @@ const touchStartX = useRef(null);
         <div className="modal-background">
           <div className="modal-arrow modal-arrow-left" onClick={irImagenAnterior}>
             <ArrowBackIosNewIcon size={50} style={{ color: "#d6d2d2", fontSize: "large" }} />
-            </div>
-            <div className="modal-arrow modal-arrow-right" onClick={irImagenSiguiente}>
+          </div>
+          <div className="modal-arrow modal-arrow-right" onClick={irImagenSiguiente}>
             <ArrowForwardIosIcon size={50} style={{ color: "#d6d2d2", fontSize: "large" }} />
-            </div>
-            <div className="modal-close" onClick={cerrarModal}>
-            <CloseIcon size={50} style={{ color: "#d6d2d2"}} />
-            </div>
-            <img className='imagen-modal'
-              src={casa.imgsrc[imagenActual]}
-              alt={`Imagen ${imagenActual + 1}`}
-            />
+          </div>
+          <div className="modal-close" onClick={cerrarModal}>
+            <CloseIcon size={50} style={{ color: "#d6d2d2" }} />
+          </div>
+          <img className='imagen-modal'
+            src={casa.imgsrc[imagenActual]}
+            alt={`Imagen ${imagenActual + 1}`}
+          />
         </div>
         </div>
       )}
