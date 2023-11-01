@@ -84,6 +84,10 @@ const Detalle = () => {
     onSwipedRight: () => cambiarImagen('prev'),
   });
 
+  const handlersForModal = useSwipeable({
+    onSwipedLeft: irImagenSiguiente,
+    onSwipedRight: irImagenAnterior,
+  });
 
   return (
     <div className="detalle-f">
@@ -124,7 +128,7 @@ const Detalle = () => {
       </div>
 
       {modalVisible && (
-        <div className="modal-background" onClick={handleClickModal} {...handlers}>
+        <div className="modal-background" onClick={handleClickModal} {...handlersForModal}>
           <div className="modal-arrow modal-arrow-left" onClick={irImagenAnterior}>
             <ArrowBackIosNewIcon size={50} style={{ color: "#d6d2d2", fontSize: "large" }} />
           </div>
